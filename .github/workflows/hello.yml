@@ -1,0 +1,17 @@
+name : Hello ci
+on:
+  push:
+    branches: [main]
+  pull request:
+    branches: [main]
+  
+job:
+  hello:
+    runs-on: ubuntu-latest
+    steps: 
+      -name: Download code
+      uses : action/cheekout@v4
+      -name: Welcome
+      run: echo "running pipline"
+      -name: file list
+      run: ls-la
